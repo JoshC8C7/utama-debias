@@ -746,6 +746,10 @@ def main():
         for ex in train_examples:
             example_map[ex.id] = ex
 
+        for x in train_examples:
+            print("TRE: ", x, list(np.exp(y) for y in bias_map[x[0]]))
+            k = input()
+
         logging.info("***** Running training *****")
         logging.info("  Num examples = %d", len(train_examples))
         logging.info("  Batch size = %d", args.train_batch_size)
